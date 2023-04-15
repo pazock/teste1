@@ -1,0 +1,66 @@
+2- 
+num = int(input("Digite um número: "))
+
+fib1 = 0
+fib2 = 1
+
+while fib2 < num:
+    fib1, fib2 = fib2, fib1 + fib2
+
+if fib2 == num:
+    print(num, "pertence à sequência de Fibonacci.")
+else:
+    print(num, "não pertence à sequência de Fibonacci.")
+
+
+3 - 
+import numpy as np
+
+# vetor com o faturamento diário
+faturamento_diario = np.array([2500, 1800, 3200, 2700, 1950, 1500, 2800, 3100, 1900, 2200, 2900, 3400, 3700, 2600, 2000, 1800, 3500, 3000, 2800, 2200, 2400, 3100, 3300, 2900, 2600, 1800, 2000, 2900, 2400, 2700])
+
+# calcula o menor valor de faturamento diário
+menor_valor = np.min(faturamento_diario)
+print("O menor valor de faturamento diário é:", menor_valor)
+
+# calcula o maior valor de faturamento diário
+maior_valor = np.max(faturamento_diario)
+print("O maior valor de faturamento diário é:", maior_valor)
+
+# calcula a média mensal de faturamento diário
+media_mensal = np.mean(faturamento_diario)
+print("A média mensal de faturamento diário é:", media_mensal)
+
+# conta o número de dias em que o faturamento diário foi superior à média mensal
+dias_acima_da_media = np.sum(faturamento_diario > media_mensal)
+print("O número de dias em que o faturamento diário foi superior à média mensal é:", dias_acima_da_media)
+
+
+4  - 
+# faturamento mensal por estado
+faturamento_estados = {"SP": 67836.43, "RJ": 36678.66, "MG": 29229.88, "ES": 27165.48, "Outros": 19849.53}
+
+# calcula o total mensal de faturamento
+total_mensal = sum(faturamento_estados.values())
+
+# calcula o percentual de representação de cada estado
+for estado, faturamento in faturamento_estados.items():
+    percentual = faturamento / total_mensal * 100
+    print("O estado de", estado, "representou", percentual, "% do faturamento mensal da distribuidora")
+
+
+5 -
+
+# string a ser invertida
+minha_string = "Hello World!"
+
+# converte a string para uma lista de caracteres
+lista_de_caracteres = list(minha_string)
+
+# inverte a lista de caracteres
+for i in range(len(lista_de_caracteres) // 2):
+    temp = lista_de_caracteres[i]
+    lista_de_caracteres[i] = lista_de_caracteres[len(lista_de_caracteres) - i - 1]
+    lista_de_caracteres[len(lista_de_caracteres) - i - 1] = temp
+
+# converte a lista de caracteres de volta para uma string
